@@ -8,13 +8,22 @@
     <br />
   </div>
 </div>
-<table class="chessboard">
-  <% (0..7).to_a.reverse.each do |row| %>
-    <tr class="y-position-<%= row %>" >
-      <% (0..7).each do |column| %>
-        <%= place_piece_td(row, column).html_safe %>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
+<div class="col-xs-12 col-sm-3 text-center blackside">
+  <h4>Black Piece Controls</h4> <!-- start to the Left so they will be on TOP with Black in mobile configuration. -->
+  <%= current_game.black_user.email %>
+</div>
+<div class="col-xs-12 col-sm-6">
+  <table class="chessboard">
+    <% (0..7).to_a.reverse.each do |row| %>
+      <tr class="y-position-<%= row %>" >
+        <% (0..7).each do |column| %>
+          <%= place_piece_td(row, column).html_safe %>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<div class="col-xs-12 col-sm-3 text-center whiteside">
+  <h4>White Piece Controls</h4> <!-- start to the Right so they will be on the BOTTOM with White in mobile configuration. -->
+</div>
 <% end %>
