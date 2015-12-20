@@ -12,7 +12,7 @@ class Piece < ActiveRecord::Base
                          allow_nil: true
   after_initialize :set_image
 
-  # Lines 16-22 all part of STI: to break it disable line 6 or give
+  # Lines 17-23 all part of STI: to break it disable line 6 or give
   # self.inheritance_column a fake field name ~AMP
   self.inheritance_column = :piece_type
   scope :pawns, -> { where(piece_type: "Pawn") }
